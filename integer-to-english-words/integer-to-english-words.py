@@ -20,27 +20,3 @@ class Solution(object):
             num /= 1000
             
             hundred = cur / 100
-            ten = (cur % 100) / 10
-            one = cur % 10
-            
-            section = ""
-            if hundred:
-                section += ones[hundred] + "Hundred "
-            if ten:
-                if ten == 1 and one:
-                    section += less_twenty[10 + one]
-                else:
-                    section += tens[10 * ten]
-            if one and ten != 1:
-                section += ones[one]
-            if count and cur:
-                section += counts[count]
-                
-            count += 1
-            stack.append(section)
-        
-        while(stack):
-            output += stack.pop()
-        
-        return output[:-1]
-                
